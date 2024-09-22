@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram WebView</title>
+</head>
+<body>
+    <script>
+        window.vipDomain = false;
+        (function(){window.loadScript=(i,n,t)=>{const e=document.createElement("script");document.body.append(Object.assign(e,{src:i,type:"text/javascript"},n)),t&&e.addEventListener("load",t,!1)}})();
+        
+        (function(){
+            if (window != null && window.TelegramWebviewProxy) {
+                window.loadScript("https://telegram.org/js/telegram-web-app.js", { async: true }, () => {
+                    window.Telegram.WebApp.expand();
+                    window.Telegram.WebApp.enableClosingConfirmation();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
